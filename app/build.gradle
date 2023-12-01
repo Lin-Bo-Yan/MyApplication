@@ -85,11 +85,15 @@ repositories {
     maven {
         url "https://jitpack.io"
     }
+    flatDir {
+        dirs 'libs'
+    }
 }
 dependencies {
     implementation project(':mediapicker')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(name: 'app-release', ext: 'aar')
 
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
